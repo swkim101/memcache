@@ -44,11 +44,55 @@ void test_malloc_and_free_10000000()
   }
 }
 
+void test_my_alloc_and_free_10000000_after_1000_alloc()
+{
+  char *m[1000];
+  int cnt = 0;
+  for (int i = 0; i < 10000000; i++) {
+    m[cnt] = my_alloc(128);
+    if (!m) {
+      panic("alloc failure");
+    }
+    for (int i = 0; i < 128; i++) {
+      m[cnt][i] = i;
+    }
+    cnt++;
+    if (cnt == 1000) {
+      for (int i = 0; i < 1000; i++) {
+        my_free(m[i]);
+      }
+      cnt = 0;
+    }
+  }
+}
+
+void test_malloc_and_free_10000000_after_1000_alloc()
+{
+  char *m[1000];
+  int cnt = 0;
+  for (int i = 0; i < 10000000; i++) {
+    m[cnt] = malloc(128);
+    if (!m) {
+      panic("alloc failure");
+    }
+    for (int i = 0; i < 128; i++) {
+      m[cnt][i] = i;
+    }
+    cnt++;
+    if (cnt == 1000) {
+      for (int i = 0; i < 1000; i++) {
+        free(m[i]);
+      }
+      cnt = 0;
+    }
+  }
+}
+
 int main()
 {
   my_alloc_init();
-  test_my_alloc_and_free_10000000();
-  test_malloc_and_free_10000000();
+  test_my_alloc_and_free_10000000_after_1000_alloc();
+  test_malloc_and_free_10000000_after_1000_alloc();
 
   return 0;
 }
