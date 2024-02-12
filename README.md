@@ -2,7 +2,7 @@
 
 slab-like memory cache for user applications.
 
-It is not *thread safe*.
+It is ***not*** thread safe.
 
 ## Usage 
 
