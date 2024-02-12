@@ -1,8 +1,6 @@
 # User-level SLAB
 
-slab-like memory cache for user applicataions.
-
-Shows 55%p better than just malloc and free. See the performance evluation below.
+slab-like memory cache for user applications.
 
 It is not *thread safe*.
 
@@ -53,50 +51,15 @@ int main()
 
 ## Performance Evaluation
 
-Scenarioes:
-1) Best: Freqent alloc and free.
-2) Worst: Infreqent alloc and free.
+alloc and free memories 150,000,000 times.  
 
-1) fixed-length, one-by-one allocate and free immediatly
+Compared with just malloc.
 
-my_alloc is 18.60% ((0.43 - 0.35)/0.43) faster.   
+For the detailed environments, see `testgen.js`
 
-iteration: 10000000  
-alloc size: 128  
+![image](https://github.com/swkim101/memcache/assets/72803908/b0edebba-7d97-4a16-addd-9598eeaacd64)
 
-```
-Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
- 43.43      0.43     0.43        1   430.00   430.00  test_malloc_and_free_10000000
- 35.35      0.78     0.35        1   350.00   510.00  test_my_alloc_and_free_10000000
- 11.11      0.89     0.11 10000000     0.00     0.00  my_free
-  5.05      0.94     0.05                             _init
-  2.02      0.96     0.02 10000000     0.00     0.00  mcache_alloc
-  2.02      0.98     0.02 10000000     0.00     0.00  my_alloc
-  1.01      0.99     0.01 10000000     0.00     0.00  mcache_free
-  0.00      0.99     0.00       11     0.00     0.00  mcache_create
-  0.00      0.99     0.00        1     0.00     0.00  my_alloc_init
-```
+(shorter time is the better)
 
-2) fixed-length, allocation and free after 1000 allocations
-
-my_alloc is 1,650% ((0.02 - 0.35)/0.02) *slower*. Very very bad.
-
-iteration: 10000000  
-alloc size: 128  
-
-```
-Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
- 76.09      0.35     0.35        1   350.00   440.00  test_my_alloc_and_free_10000000_after_1000_alloc
-  6.52      0.38     0.03 10390000     0.00     0.00  mcache_alloc
-  6.52      0.41     0.03   390011     0.00     0.00  mcache_create
-  4.35      0.43     0.02 10000000     0.00     0.00  my_alloc
-  4.35      0.45     0.02        1    20.00    20.00  test_malloc_and_free_10000000_after_1000_alloc
-  2.17      0.46     0.01 10000000     0.00     0.00  mcache_free
-  0.00      0.46     0.00 10000000     0.00     0.00  my_free
-  0.00      0.46     0.00        1     0.00     0.00  my_alloc_init
-```
+It's bad. Don't use this.
 
