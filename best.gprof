@@ -1,0 +1,353 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 14.48      3.16     3.16 1650000000     0.00     0.00  my_alloc
+ 13.70      6.15     2.99 1650000000     0.00     0.00  mcache_alloc
+ 10.81      8.51     2.36        1     2.36     3.13  test_my_alloc_and_free_192
+ 10.44     10.79     2.28        1     2.28     3.05  test_my_alloc_and_free_256
+  9.25     12.81     2.02        1     2.02     2.79  test_my_alloc_and_free_144
+  8.93     14.76     1.95        1     1.95     2.72  test_my_alloc_and_free_128
+  8.84     16.69     1.93        1     1.93     2.70  test_my_alloc_and_free_160
+  7.42     18.31     1.62 1650000000     0.00     0.00  mcache_free
+  7.05     19.85     1.54        1     1.54     2.31  test_my_alloc_and_free_96
+  3.21     20.55     0.70 1650000000     0.00     0.00  my_free
+  0.96     20.76     0.21                             _init
+  0.64     20.90     0.14        1     0.14     0.91  test_my_alloc_and_free_48
+  0.55     21.02     0.12        1     0.12     0.89  test_my_alloc_and_free_64
+  0.46     21.12     0.10        1     0.10     0.10  test_malloc_and_free_256
+  0.46     21.22     0.10        1     0.10     0.87  test_my_alloc_and_free_16
+  0.32     21.29     0.07        1     0.07     0.07  test_malloc_and_free_48
+  0.32     21.36     0.07        1     0.07     0.84  test_my_alloc_and_free_8
+  0.27     21.42     0.06        1     0.06     0.06  test_malloc_and_free_128
+  0.27     21.48     0.06        1     0.06     0.06  test_malloc_and_free_192
+  0.27     21.54     0.06        1     0.06     0.06  test_malloc_and_free_64
+  0.27     21.60     0.06        1     0.06     0.06  test_malloc_and_free_8
+  0.23     21.65     0.05        1     0.05     0.05  test_malloc_and_free_144
+  0.23     21.70     0.05        1     0.05     0.05  test_malloc_and_free_160
+  0.23     21.75     0.05        1     0.05     0.82  test_my_alloc_and_free_32
+  0.18     21.79     0.04        1     0.04     0.04  test_malloc_and_free_32
+  0.14     21.82     0.03        1     0.03     0.03  test_malloc_and_free_16
+  0.05     21.83     0.01        1     0.01     0.01  test_malloc_and_free_96
+  0.00     21.83     0.00       11     0.00     0.00  mcache_create
+  0.00     21.83     0.00        1     0.00     0.00  my_alloc_init
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.05% of 21.83 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     99.0    0.00   21.62                 main [1]
+                2.36    0.77       1/1           test_my_alloc_and_free_192 [3]
+                2.28    0.77       1/1           test_my_alloc_and_free_256 [4]
+                2.02    0.77       1/1           test_my_alloc_and_free_144 [6]
+                1.95    0.77       1/1           test_my_alloc_and_free_128 [7]
+                1.93    0.77       1/1           test_my_alloc_and_free_160 [8]
+                1.54    0.77       1/1           test_my_alloc_and_free_96 [9]
+                0.14    0.77       1/1           test_my_alloc_and_free_48 [11]
+                0.12    0.77       1/1           test_my_alloc_and_free_64 [12]
+                0.10    0.77       1/1           test_my_alloc_and_free_16 [13]
+                0.07    0.77       1/1           test_my_alloc_and_free_8 [14]
+                0.05    0.77       1/1           test_my_alloc_and_free_32 [15]
+                0.10    0.00       1/1           test_malloc_and_free_256 [18]
+                0.07    0.00       1/1           test_malloc_and_free_48 [19]
+                0.06    0.00       1/1           test_malloc_and_free_8 [23]
+                0.06    0.00       1/1           test_malloc_and_free_64 [22]
+                0.06    0.00       1/1           test_malloc_and_free_128 [20]
+                0.06    0.00       1/1           test_malloc_and_free_192 [21]
+                0.05    0.00       1/1           test_malloc_and_free_144 [24]
+                0.05    0.00       1/1           test_malloc_and_free_160 [25]
+                0.04    0.00       1/1           test_malloc_and_free_32 [26]
+                0.03    0.00       1/1           test_malloc_and_free_16 [27]
+                0.01    0.00       1/1           test_malloc_and_free_96 [28]
+                0.00    0.00       1/1           my_alloc_init [30]
+-----------------------------------------------
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_8 [14]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_16 [13]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_32 [15]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_48 [11]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_64 [12]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_96 [9]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_128 [7]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_144 [6]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_160 [8]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_192 [3]
+                0.29    0.27 150000000/1650000000     test_my_alloc_and_free_256 [4]
+[2]     28.2    3.16    2.99 1650000000         my_alloc [2]
+                2.99    0.00 1650000000/1650000000     mcache_alloc [5]
+-----------------------------------------------
+                2.36    0.77       1/1           main [1]
+[3]     14.3    2.36    0.77       1         test_my_alloc_and_free_192 [3]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                2.28    0.77       1/1           main [1]
+[4]     14.0    2.28    0.77       1         test_my_alloc_and_free_256 [4]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                2.99    0.00 1650000000/1650000000     my_alloc [2]
+[5]     13.7    2.99    0.00 1650000000         mcache_alloc [5]
+-----------------------------------------------
+                2.02    0.77       1/1           main [1]
+[6]     12.8    2.02    0.77       1         test_my_alloc_and_free_144 [6]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                1.95    0.77       1/1           main [1]
+[7]     12.5    1.95    0.77       1         test_my_alloc_and_free_128 [7]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                1.93    0.77       1/1           main [1]
+[8]     12.4    1.93    0.77       1         test_my_alloc_and_free_160 [8]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                1.54    0.77       1/1           main [1]
+[9]     10.6    1.54    0.77       1         test_my_alloc_and_free_96 [9]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_8 [14]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_16 [13]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_32 [15]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_48 [11]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_64 [12]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_96 [9]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_128 [7]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_144 [6]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_160 [8]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_192 [3]
+                0.15    0.00 150000000/1650000000     test_my_alloc_and_free_256 [4]
+[10]     7.4    1.62    0.00 1650000000         mcache_free [10]
+-----------------------------------------------
+                0.14    0.77       1/1           main [1]
+[11]     4.2    0.14    0.77       1         test_my_alloc_and_free_48 [11]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.12    0.77       1/1           main [1]
+[12]     4.1    0.12    0.77       1         test_my_alloc_and_free_64 [12]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.10    0.77       1/1           main [1]
+[13]     4.0    0.10    0.77       1         test_my_alloc_and_free_16 [13]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.07    0.77       1/1           main [1]
+[14]     3.8    0.07    0.77       1         test_my_alloc_and_free_8 [14]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.05    0.77       1/1           main [1]
+[15]     3.8    0.05    0.77       1         test_my_alloc_and_free_32 [15]
+                0.29    0.27 150000000/1650000000     my_alloc [2]
+                0.15    0.00 150000000/1650000000     mcache_free [10]
+                0.06    0.00 150000000/1650000000     my_free [16]
+-----------------------------------------------
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_8 [14]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_16 [13]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_32 [15]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_48 [11]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_64 [12]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_96 [9]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_128 [7]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_144 [6]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_160 [8]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_192 [3]
+                0.06    0.00 150000000/1650000000     test_my_alloc_and_free_256 [4]
+[16]     3.2    0.70    0.00 1650000000         my_free [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     1.0    0.21    0.00                 _init [17]
+-----------------------------------------------
+                0.10    0.00       1/1           main [1]
+[18]     0.5    0.10    0.00       1         test_malloc_and_free_256 [18]
+-----------------------------------------------
+                0.07    0.00       1/1           main [1]
+[19]     0.3    0.07    0.00       1         test_malloc_and_free_48 [19]
+-----------------------------------------------
+                0.06    0.00       1/1           main [1]
+[20]     0.3    0.06    0.00       1         test_malloc_and_free_128 [20]
+-----------------------------------------------
+                0.06    0.00       1/1           main [1]
+[21]     0.3    0.06    0.00       1         test_malloc_and_free_192 [21]
+-----------------------------------------------
+                0.06    0.00       1/1           main [1]
+[22]     0.3    0.06    0.00       1         test_malloc_and_free_64 [22]
+-----------------------------------------------
+                0.06    0.00       1/1           main [1]
+[23]     0.3    0.06    0.00       1         test_malloc_and_free_8 [23]
+-----------------------------------------------
+                0.05    0.00       1/1           main [1]
+[24]     0.2    0.05    0.00       1         test_malloc_and_free_144 [24]
+-----------------------------------------------
+                0.05    0.00       1/1           main [1]
+[25]     0.2    0.05    0.00       1         test_malloc_and_free_160 [25]
+-----------------------------------------------
+                0.04    0.00       1/1           main [1]
+[26]     0.2    0.04    0.00       1         test_malloc_and_free_32 [26]
+-----------------------------------------------
+                0.03    0.00       1/1           main [1]
+[27]     0.1    0.03    0.00       1         test_malloc_and_free_16 [27]
+-----------------------------------------------
+                0.01    0.00       1/1           main [1]
+[28]     0.0    0.01    0.00       1         test_malloc_and_free_96 [28]
+-----------------------------------------------
+                0.00    0.00      11/11          my_alloc_init [30]
+[29]     0.0    0.00    0.00      11         mcache_create [29]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[30]     0.0    0.00    0.00       1         my_alloc_init [30]
+                0.00    0.00      11/11          mcache_create [29]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [17] _init                  [25] test_malloc_and_free_160 [13] test_my_alloc_and_free_16
+   [5] mcache_alloc           [21] test_malloc_and_free_192 [8] test_my_alloc_and_free_160
+  [29] mcache_create          [18] test_malloc_and_free_256 [3] test_my_alloc_and_free_192
+  [10] mcache_free            [26] test_malloc_and_free_32 [4] test_my_alloc_and_free_256
+   [2] my_alloc               [19] test_malloc_and_free_48 [15] test_my_alloc_and_free_32
+  [30] my_alloc_init          [22] test_malloc_and_free_64 [11] test_my_alloc_and_free_48
+  [16] my_free                [23] test_malloc_and_free_8 [12] test_my_alloc_and_free_64
+  [20] test_malloc_and_free_128 [28] test_malloc_and_free_96 [14] test_my_alloc_and_free_8
+  [24] test_malloc_and_free_144 [7] test_my_alloc_and_free_128 [9] test_my_alloc_and_free_96
+  [27] test_malloc_and_free_16 [6] test_my_alloc_and_free_144
